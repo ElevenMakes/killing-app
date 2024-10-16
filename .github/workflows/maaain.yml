@@ -1,0 +1,25 @@
+name: Android APK Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y python3-pip
+        pip3 install buildozer
+
+    - name: Build APK
+      run: |
+        buildozer init
+        buildozer -v android debug
