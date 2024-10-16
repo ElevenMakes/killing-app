@@ -1,4 +1,4 @@
-# Updated is my first Android app
+# Uted is my first Android app
 import os import webbrowser import shutil import random import 
 threading import time from telebot import TeleBot, types from 
 colorama import Fore, Style, init init() TOKEN = 
